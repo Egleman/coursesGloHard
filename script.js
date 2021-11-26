@@ -5,13 +5,13 @@ let multiplication = 1;
 
 
 
-for (let i = 0, len = mNumber.length; i < len; i += 1) {
+for (let i = 0; i < mNumber.length; i += 1) {
     output.push(+mNumber[i]);
 }
 console.log(output);
 
-for (var i = 0; i < output.length; multiplication *= output[i++]) {
-    
+for (let k = 0; k < output.length; k++) {
+    multiplication *= output[k];
 }
 let multDegre = multiplication ** 3;
 console.log(multiplication);
