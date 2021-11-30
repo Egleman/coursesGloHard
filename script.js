@@ -1,4 +1,3 @@
-
 const apple = (txt) => {
     if (typeof txt !== 'string') {
         return 'Не строка';
@@ -9,9 +8,6 @@ const apple = (txt) => {
      } else {
          return text;
      }
-
-    
-    
 };
 
 console.log(apple('   Lorem ipsum dolor sit amet consec    '));
