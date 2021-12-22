@@ -49,7 +49,6 @@ function pause() {
 
 btnStart.addEventListener('click', () => {
     isPause = !isPause;
-    //step = 5;
     btnStart.style.display = 'none';
     btnPause.style.display = 'inline-flex';
     pause();
