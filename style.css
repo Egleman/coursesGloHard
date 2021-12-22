@@ -3,3 +3,18 @@
     height: 100px;
     background-color: red;
 }
+
+.pause {
+    display: none;
+}
+
+.start {
+    display: inline-flex;
+}
+
+.overFlow {
+    overflow: hidden;
+    width: 500px;
+    height: 100px;
+    border: 1px solid black;
+}

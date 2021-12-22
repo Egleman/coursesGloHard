@@ -7,8 +7,9 @@ let block = document.querySelector('.block');
 let end = 0;
 let step = 5;
 let isPause = false;
-let btnStart = document.querySelectorAll('button')[0];
-let reset = document.querySelectorAll('button')[1];
+let btnStart = document.querySelector('.start');
+let btnPause = document.querySelector('.pause');
+let reset = document.querySelector('.reset');
 let moveInterval = 0;
 
 
@@ -30,11 +31,10 @@ document.querySelector('input').addEventListener('keyup', debouncedOnInput);
 
 function move() {
     end += step;
-    if (end == 500 || end == 0) {
-        step = -step;
-    } else if (end < 0) {
-        step = 0;
-    }
+    if (end > 500) {
+        end = -100;
+        end += step;
+    } 
     block.style.marginLeft = end + 'px';
     if(isPause === true) {
         moveInterval = requestAnimationFrame(move);  
@@ -43,20 +43,35 @@ function move() {
 function pause() {
     if(isPause === true) {
         moveInterval = requestAnimationFrame(move);
-        btnStart.textContent = "Пауза";
     }
 }
 
 
 btnStart.addEventListener('click', () => {
     isPause = !isPause;
-    step = 5;
-    btnStart.textContent = 'Старт';
+    //step = 5;
+    btnStart.style.display = 'none';
+    btnPause.style.display = 'inline-flex';
+    pause();
+});
+
+btnPause.addEventListener('click', () => {
+    isPause = !isPause;
+    btnStart.style.display = 'inline-flex';
+    btnPause.style.display = 'none';
     pause();
 });
 reset.addEventListener('click', () => {
-    btnStart.click();
+    if(getComputedStyle(btnStart).display == 'inline-flex') {
+        isPause = false;
+    } else if(getComputedStyle(btnPause).display == 'inline-flex') {
+        isPause = false;
+        btnStart.style.display = 'inline-flex';
+        btnPause.style.display = 'none';
+    }
     end = 0;
     block.style.marginLeft = end + 'px';
     cancelAnimationFrame(moveInterval);
 });
+
+console.log(getComputedStyle(btnStart).display == 'inline-flex');
