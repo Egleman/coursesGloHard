@@ -26,33 +26,8 @@ function onInput(event) {
 }
 
 document.querySelector('input').addEventListener('keyup', debouncedOnInput);
-/*
-       
-             function move() {
-               end += step;
-               if(end == 500 || end == 0) {
-                   step = -step;
-               }    
-               block.style.marginLeft = end + 'px';
-               requestAnimationFrame(move);
-             }
-             requestAnimationFrame(move);
-           //document.addEventListener('keydown', function(event) {
-           //if(event.key == 'Enter') alert(end);  });
 
 
-    function move() {
-        end += step;
-        if (end == 500 || end == 0) {
-            step = -step;
-        }
-        block.style.marginLeft = step + 'px';
-        requestAnimationFrame(move);
-    }
-    requestAnimationFrame(move);
-
-
-*/
 function move() {
     end += step;
     if (end == 500 || end == 0) {
