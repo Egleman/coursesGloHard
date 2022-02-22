@@ -1,13 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="script.js" defer></script>
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+    <script src="work.js" defer></script>
+    <title></title>
 </head>
+
 <body>
-    
+  <header class="header center">
+    <h1>Нанять или уволить сотрудника</h1>
+  </header>
+  <div class="content center">
+    <form class="form" action="#" method="get" accept-charset="utf-8">
+      <input type="text" name="name" id="name" class="inp" value="" placeholder="Имя" required/>
+      <input type="text" name="surname" id="surname" class="inp" value="" placeholder="Фамилия" required/>
+      <input type="number" name="tel" id="tel" class="inp" value="" placeholder="Телефон" required/>
+      <input type="number" placeholder="Возраст" required id="age"class="inp" >
+      <select name="classVariable" id="classVariable" class="selec">
+        <option value="должность" selected>должность</option>
+        <option value="Слесарь">Слесарь</option>
+        <option value="Водитель">Водитель</option>
+      </select>
+      <div class="locksmith">
+        <input type="text" name="" id="education" class="inp" value="" placeholder="Образование"/>
+        <input type="text" name="" id="pastJob" class="inp" value="" placeholder="Прошлое место работы?"/>
+      </div>
+      <div class="driver">
+        <input type="text" name="" id="experience" class="inp" value="" placeholder="Стаж вождения в годах?"/>
+        <input type="text" name="" id="categories" class="inp" value="" placeholder="Какие категории открыты?"/>
+      </div>
+      <input type="submit" name="запись" id="save" value="Сохранить" />
+    </form>
+  </div>
+  
+  <div class="divTable center">
+  <table class="table" border="1" width="70%" cellpadding="5">
+  </table>
+</div>
 </body>
+
 </html>
